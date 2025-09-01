@@ -3,130 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name - Colorful Portfolio</title>
+  <title>Your Name - Portfolio</title>
   <style>
-    /* Reset and base */
+    /* Reset */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f83600, #f9d423);
-      color: #222;
+      background: #f0f4f8;
+      color: #333;
       line-height: 1.6;
-      padding: 2rem;
+      padding: 0 2rem 3rem;
       min-height: 100vh;
     }
+    /* Container */
     .container {
       max-width: 900px;
-      background: #fff;
-      margin: auto;
-      padding: 2.5rem 3rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border: 5px solid #ff6f61;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
     }
+
+    /* Header */
     header {
-      text-align: center;
-      margin-bottom: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 3px solid #ff6f61;
+      margin-bottom: 2rem;
     }
-    header h1 {
-      font-size: 3rem;
-      color: #ff6f61;
-      letter-spacing: 2px;
-      margin-bottom: 0.3rem;
-      text-transform: uppercase;
-    }
-    header p {
-      font-size: 1.3rem;
-      color: #555;
-      font-weight: 600;
-      font-style: italic;
-    }
-    section {
-      margin-bottom: 2.5rem;
-    }
-    h2 {
+    header .name {
       font-size: 2rem;
+      font-weight: 700;
       color: #ff6f61;
-      border-bottom: 4px solid #f9a825;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.2rem;
-      font-weight: 700;
+      letter-spacing: 1.5px;
+      user-select: none;
     }
-    ul {
+    nav ul {
       list-style: none;
+      display: flex;
+      gap: 1.6rem;
     }
-    ul li {
-      padding: 0.8rem 0;
-      border-bottom: 1px solid #eee;
+    nav ul li {
       font-weight: 600;
-      font-size: 1.1rem;
-      color: #444;
-    }
-    a {
-      color: #f9a825;
-      font-weight: 700;
-      text-decoration: none;
+      cursor: pointer;
+      color: #555;
       transition: color 0.3s ease;
     }
-    a:hover {
+    nav ul li:hover {
       color: #ff6f61;
       text-decoration: underline;
     }
-    footer {
-      text-align: center;
-      color: #999;
-      font-size: 1rem;
-      margin-top: 3rem;
-      font-weight: 600;
+
+    /* Section Titles */
+    section h2 {
+      color: #ff6f61;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #f9a825;
+      padding-bottom: 0.4rem;
+      font-weight: 700;
     }
+
+    /* About Me */
+    #about p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 700px;
+    }
+
+    /* Cards container for Experience */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .card {
+      background: #fff3f2;
+      border: 2px solid #ff6f61;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      flex: 1 1 280px;
+      box-shadow: 0 3px 8px rgba(255,111,97,0.2);
+      transition: box-shadow 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 6px 20px rgba(255,111,97,0.4);
+    }
+    .card h3 {
+      color: #ff6f61;
+      margin-bottom: 0.3rem;
+      font-size: 1.3rem;
+    }
+    .card span {
+      display: block;
+      font-style: italic;
+      color: #999;
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+    }
+    .card p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* Simple lists for other sections */
+    ul.simple-list {
+      list-style: disc inside;
+      margin-left: 1rem;
+      color: #444;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive */
     @media (max-width: 600px) {
-      .container {
-        padding: 1.5rem 2rem;
+      header {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      header h1 {
-        font-size: 2.2rem;
+      nav ul {
+        margin-top: 0.8rem;
+        flex-wrap: wrap;
+        gap: 1rem;
       }
-      h2 {
-        font-size: 1.5rem;
+      .cards {
+        flex-direction: column;
+      }
+      .card {
+        flex: 1 1 100%;
       }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
   <div class="container">
     <header>
-      <h1>Your Name</h1>
-      <p>Creative Developer & Designer</p>
+      <div class="name">Your Name</div>
+      <nav>
+        <ul>
+          <li onclick="scrollToSection('about')">About Me</li>
+          <li onclick="scrollToSection('experience')">Experience</li>
+          <li onclick="scrollToSection('education')">Education</li>
+          <li onclick="scrollToSection('certifications')">Certifications</li>
+          <li onclick="scrollToSection('skills')">Skills</li>
+          <li onclick="scrollToSection('projects')">Projects</li>
+        </ul>
+      </nav>
     </header>
 
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I love creating colorful, engaging web experiences that stand out. Skilled in HTML, CSS, JavaScript, and UI/UX design.
+        Passionate web developer with a strong background in building modern, responsive websites and web apps. Skilled in HTML, CSS, JavaScript, and UI/UX design.
       </p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Frontend Developer</h3>
+          <span>ABC Company — Jan 2023 to Present</span>
+          <p>Developed responsive user interfaces using React and optimized performance for a better user experience.</p>
+        </div>
+        <div class="card">
+          <h3>Web Designer</h3>
+          <span>XYZ Studio — Jun 2021 to Dec 2022</span>
+          <p>Created modern designs and prototypes, collaborating closely with developers to bring ideas to life.</p>
+        </div>
+        <div class="card">
+          <h3>Intern - Web Development</h3>
+          <span>Startup Inc. — Jan 2020 to May 2021</span>
+          <p>Assisted in developing the company website, improving SEO and accessibility.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="simple-list">
+        <li>Bachelor of Science in Computer Science — University of Example (2016-2020)</li>
+        <li>Full Stack Web Development Bootcamp — Code Academy (2021)</li>
+      </ul>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="simple-list">
+        <li>Certified JavaScript Developer — W3Schools</li>
+        <li>Responsive Web Design — freeCodeCamp</li>
+        <li>Google UX Design Certificate</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="simple-list">
+        <li>HTML, CSS, JavaScript, React</li>
+        <li>UI/UX Design & Prototyping</li>
+        <li>Git & GitHub</li>
+        <li>SEO & Accessibility</li>
+      </ul>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <ul>
-        <li><strong>Vibrant Portfolio:</strong> <a href="https://github.com/your-username/portfolio" target="_blank">GitHub Link</a> — A colorful portfolio website.</li>
-        <li><strong>Creative Blog:</strong> <a href="https://github.com/your-username/blog" target="_blank">GitHub Link</a> — Blogging platform with bright UI.</li>
-        <li><strong>Design System:</strong> <a href="https://yourwebsite.com" target="_blank">Live Demo</a> — A UI design system for modern apps.</li>
+      <ul class="simple-list">
+        <li><a href="https://github.com/your-username/project-one" target="_blank">Project One</a>: Responsive task manager web app.</li>
+        <li><a href="https://github.com/your-username/project-two" target="_blank">Project Two</a>: Open source React component library.</li>
+        <li><a href="https://yourwebsite.com" target="_blank">Personal Blog</a>: Built with Gatsby and GraphQL.</li>
       </ul>
     </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email me at <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-      <p>Follow me on <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a> and <a href="https://linkedin.com/in/yourhandle" target="_blank">LinkedIn</a></p>
-    </section>
-
-    <footer>
-      &copy; 2025 Your Name. Designed with passion.
-    </footer>
   </div>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
 </body>
 </html>
