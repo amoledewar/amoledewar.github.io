@@ -13,6 +13,18 @@
       box-sizing: border-box;
 text-align: center;
     }
+
+    .skills-wrapper {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Align vertically */
+  gap: 20px;                /* Space between images */
+  flex-wrap: nowrap;        /* Prevent wrapping to next line */
+  margin-top: 20px;
+}
+
+
+
     html {
       scroll-behavior: smooth;
     }
@@ -374,13 +386,11 @@ text-align: center;
   <section id="programming" style="margin-top: 2rem;">
     <h3>Programming Languages</h3>  
 
-    <div class="skills-wrapper">
-           
-            <img src="java.svg" alt="Java" loading="lazy" class="icon icon-card">
-            <img src="spring.svg" alt="Spring Boot" loading="lazy" class="icon icon-card">
-            <img src="Hibernate.svg" alt="Hibernate" loading="lazy" class="icon icon-card">
-           
-        </div>
+  <div class="skills-wrapper">
+  <img src="java.svg" alt="Java" loading="lazy" class="icon icon-card">
+  <img src="spring.svg" alt="Spring Boot" loading="lazy" class="icon icon-card">
+  <img src="Hibernate.svg" alt="Hibernate" loading="lazy" class="icon icon-card">
+</div>
   </section>
 
   <!-- PROJECTS -->
