@@ -1,278 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amol Edewar - Portfolio</title>
-  <!-- Ionicons CDN for menu icon -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f0f4f8;
-      color: #333;
-      line-height: 1.6;
-    }
-    
-    /* Navbar */
-    nav.navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      padding: 1rem 2rem;
-      border-bottom: 4px solid #ff6f61;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    nav.navbar h1 a.nav-link {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #ff6f61;
-      text-decoration: none;
-      user-select: none;
-      letter-spacing: 1px;
-    }
-    ul.navigation {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-    ul.navigation li a.nav-link {
-      text-decoration: none;
-      font-weight: 600;
-      color: #555;
-      padding: 0.5rem 0.8rem;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    ul.navigation li a.nav-link:hover,
-    ul.navigation li a.nav-link.active {
-      background-color: #ff6f61;
-      color: white;
-    }
-    
-    /* Burger Menu */
-    button.burger-menu {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #ff6f61;
-    }
-    
-    /* Container for content */
-    .container {
-      max-width: 900px;
-      margin: 2rem auto 5rem;
-      background: white;
-      padding: 2rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Amol Edewar - Resume</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
 
-    /* Section Titles */
-    section h2 {
-      color: #ff6f61;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      border-bottom: 3px solid #f9a825;
-      padding-bottom: 0.4rem;
-      font-weight: 700;
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #f1f1f1;
+    min-height: 100vh;
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.6);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #a77ff2;
+    padding-bottom: 1rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffd700;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.8rem;
+  }
+
+  nav ul li a {
+    color: #f1f1f1;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: #a77ff2;
+    color: #fff;
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 3px solid #ffd700;
+    padding-bottom: 0.3rem;
+  }
+
+  /* Experience Cards */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.2rem 1.5rem;
+    border-left: 6px solid #ffd700;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: translateX(10px);
+  }
+
+  .card h3 {
+    color: #ffd700;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+  .card span {
+    font-style: italic;
+    color: #ccc;
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+
+  .card p {
+    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
     }
-    
-    /* Experience Cards */
-    .cards {
-      display: flex;
+    nav ul {
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 1rem;
     }
-    .card {
-      background: #fff3f2;
-      border: 2px solid #ff6f61;
-      border-radius: 10px;
-      padding: 1rem 1.5rem;
-      flex: 1 1 280px;
-      box-shadow: 0 3px 8px rgba(255,111,97,0.2);
-      transition: box-shadow 0.3s ease;
+    .cards {
+      gap: 1rem;
     }
-    .card:hover {
-      box-shadow: 0 6px 20px rgba(255,111,97,0.4);
-    }
-    .card h3 {
-      color: #ff6f61;
-      margin-bottom: 0.3rem;
-      font-size: 1.3rem;
-    }
-    .card span {
-      display: block;
-      font-style: italic;
-      color: #999;
-      margin-bottom: 0.8rem;
-      font-size: 0.9rem;
-    }
-    .card p {
-      color: #555;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-    
-    /* Simple lists */
-    ul.simple-list {
-      list-style: disc inside;
-      margin-left: 1rem;
-      color: #444;
-      font-size: 1.1rem;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      ul.navigation {
-        position: fixed;
-        top: 64px;
-        right: 0;
-        background: white;
-        height: calc(100% - 64px);
-        width: 220px;
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 1.2rem;
-        box-shadow: -4px 0 8px rgba(0,0,0,0.1);
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 999;
-      }
-      ul.navigation.active {
-        transform: translateX(0);
-      }
-      button.burger-menu {
-        display: block;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-
-  <nav class="navbar">
-    <h1>
-      <a href="#" class="nav-link">Amol Edewar</a>
-    </h1>
-
-    <button class="burger-menu" id="burger-menu" aria-label="Toggle menu">
-      <ion-icon class="bars" name="menu-outline"></ion-icon>
-    </button>
-
-    <ul class="navigation" id="nav-menu">
-      <li><a href="#about" class="nav-link">About Me</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#certificates" class="nav-link">Certifications</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-    </ul>
-  </nav>
-
   <div class="container">
+    <header>
+      <h1>Amol Edewar</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <section id="about">
       <h2>About Me</h2>
-      <p>
-        Passionate web developer with a strong background in building modern, responsive websites and web apps. Skilled in HTML, CSS, JavaScript, and UI/UX design.
-      </p>
+      <p>Creative web developer passionate about building elegant, performant websites and apps. Skilled in front-end development with a focus on UX and clean design.</p>
     </section>
 
     <section id="experience">
       <h2>Experience</h2>
       <div class="cards">
-        <div class="card">
+        <article class="card">
           <h3>Frontend Developer</h3>
           <span>ABC Company — Jan 2023 to Present</span>
-          <p>Developed responsive user interfaces using React and optimized performance for a better user experience.</p>
-        </div>
-        <div class="card">
+          <p>Lead frontend development on company’s main product. Built reusable React components and optimized app performance, improving user retention by 20%.</p>
+        </article>
+
+        <article class="card">
           <h3>Web Designer</h3>
           <span>XYZ Studio — Jun 2021 to Dec 2022</span>
-          <p>Created modern designs and prototypes, collaborating closely with developers to bring ideas to life.</p>
-        </div>
-        <div class="card">
+          <p>Designed modern and intuitive websites for small businesses, collaborating closely with clients and developers for smooth project delivery.</p>
+        </article>
+
+        <article class="card">
           <h3>Intern - Web Development</h3>
           <span>Startup Inc. — Jan 2020 to May 2021</span>
-          <p>Assisted in developing the company website, improving SEO and accessibility.</p>
-        </div>
+          <p>Assisted in website maintenance, SEO improvements, and front-end bug fixes. Learned the importance of clean, accessible code.</p>
+        </article>
       </div>
     </section>
 
+    <!-- Add other sections similarly -->
     <section id="education">
       <h2>Education</h2>
-      <ul class="simple-list">
-        <li>Bachelor of Science in Computer Science — University of Example (2016-2020)</li>
-        <li>Full Stack Web Development Bootcamp — Code Academy (2021)</li>
-      </ul>
+      <p>Bachelor of Science in Computer Science — University of Example (2016 - 2020)</p>
     </section>
 
-    <section id="certificates">
+    <section id="certifications">
       <h2>Certifications</h2>
-      <ul class="simple-list">
-        <li>Certified JavaScript Developer — W3Schools</li>
-        <li>Responsive Web Design — freeCodeCamp</li>
-        <li>Google UX Design Certificate</li>
-      </ul>
+      <p>Certified JavaScript Developer — W3Schools</p>
+      <p>Responsive Web Design — freeCodeCamp</p>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
-      <ul class="simple-list">
-        <li>HTML, CSS, JavaScript, React</li>
-        <li>UI/UX Design & Prototyping</li>
-        <li>Git & GitHub</li>
-        <li>SEO & Accessibility</li>
-      </ul>
+      <p>HTML, CSS, JavaScript, React, UI/UX Design, Git, SEO</p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <ul class="simple-list">
-        <li><a href="https://github.com/your-username/project-one" target="_blank" rel="noopener noreferrer">Project One</a>: Responsive task manager web app.</li>
-        <li><a href="https://github.com/your-username/project-two" target="_blank" rel="noopener noreferrer">Project Two</a>: Open source React component library.</li>
-        <li><a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">Personal Blog</a>: Built with Gatsby and GraphQL.</li>
-      </ul>
+      <p><a href="https://github.com/your-username/project-one" target="_blank" style="color:#ffd700;">Project One</a> - Responsive task manager app</p>
+      <p><a href="https://github.com/your-username/project-two" target="_blank" style="color:#ffd700;">Project Two</a> - React component library</p>
     </section>
   </div>
-
-  <script>
-    const burger = document.getElementById('burger-menu');
-    const navMenu = document.getElementById('nav-menu');
-    
-    burger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-
-    // Optional: Close menu on nav link click (mobile)
-    document.querySelectorAll('.navigation a.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-      });
-    });
-
-    // Optional: Smooth scroll behavior
-    document.querySelectorAll('a.nav-link').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const href = link.getAttribute('href');
-        if (href.startsWith('#')) {
-          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
-
 </body>
 </html>
