@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name - Portfolio</title>
+  <title>Amol Edewar - Portfolio</title>
+  <!-- Ionicons CDN for menu icon -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
   <style>
-    /* Reset */
+    /* Basic Reset */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -14,49 +18,66 @@
       background: #f0f4f8;
       color: #333;
       line-height: 1.6;
-      padding: 0 2rem 3rem;
-      min-height: 100vh;
     }
-    /* Container */
+    
+    /* Navbar */
+    nav.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 1rem 2rem;
+      border-bottom: 4px solid #ff6f61;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    nav.navbar h1 a.nav-link {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ff6f61;
+      text-decoration: none;
+      user-select: none;
+      letter-spacing: 1px;
+    }
+    ul.navigation {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    ul.navigation li a.nav-link {
+      text-decoration: none;
+      font-weight: 600;
+      color: #555;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    ul.navigation li a.nav-link:hover,
+    ul.navigation li a.nav-link.active {
+      background-color: #ff6f61;
+      color: white;
+    }
+    
+    /* Burger Menu */
+    button.burger-menu {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #ff6f61;
+    }
+    
+    /* Container for content */
     .container {
       max-width: 900px;
-      margin: 2rem auto;
+      margin: 2rem auto 5rem;
       background: white;
       padding: 2rem 3rem;
       border-radius: 12px;
       box-shadow: 0 5px 18px rgba(0,0,0,0.1);
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 1.5rem;
-      border-bottom: 3px solid #ff6f61;
-      margin-bottom: 2rem;
-    }
-    header .name {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #ff6f61;
-      letter-spacing: 1.5px;
-      user-select: none;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.6rem;
-    }
-    nav ul li {
-      font-weight: 600;
-      cursor: pointer;
-      color: #555;
-      transition: color 0.3s ease;
-    }
-    nav ul li:hover {
-      color: #ff6f61;
-      text-decoration: underline;
     }
 
     /* Section Titles */
@@ -68,15 +89,8 @@
       padding-bottom: 0.4rem;
       font-weight: 700;
     }
-
-    /* About Me */
-    #about p {
-      font-size: 1.1rem;
-      color: #444;
-      max-width: 700px;
-    }
-
-    /* Cards container for Experience */
+    
+    /* Experience Cards */
     .cards {
       display: flex;
       flex-wrap: wrap;
@@ -111,53 +125,63 @@
       font-size: 1rem;
       line-height: 1.4;
     }
-
-    /* Simple lists for other sections */
+    
+    /* Simple lists */
     ul.simple-list {
       list-style: disc inside;
       margin-left: 1rem;
       color: #444;
       font-size: 1.1rem;
     }
-
+    
     /* Responsive */
-    @media (max-width: 600px) {
-      header {
+    @media (max-width: 768px) {
+      ul.navigation {
+        position: fixed;
+        top: 64px;
+        right: 0;
+        background: white;
+        height: calc(100% - 64px);
+        width: 220px;
         flex-direction: column;
-        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1.2rem;
+        box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
       }
-      nav ul {
-        margin-top: 0.8rem;
-        flex-wrap: wrap;
-        gap: 1rem;
+      ul.navigation.active {
+        transform: translateX(0);
       }
-      .cards {
-        flex-direction: column;
-      }
-      .card {
-        flex: 1 1 100%;
+      button.burger-menu {
+        display: block;
       }
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <div class="name">Your Name</div>
-      <nav>
-        <ul>
-          <li onclick="scrollToSection('about')">About Me</li>
-          <li onclick="scrollToSection('experience')">Experience</li>
-          <li onclick="scrollToSection('education')">Education</li>
-          <li onclick="scrollToSection('certifications')">Certifications</li>
-          <li onclick="scrollToSection('skills')">Skills</li>
-          <li onclick="scrollToSection('projects')">Projects</li>
-        </ul>
-      </nav>
-    </header>
+  <nav class="navbar">
+    <h1>
+      <a href="#" class="nav-link">Amol Edewar</a>
+    </h1>
 
+    <button class="burger-menu" id="burger-menu" aria-label="Toggle menu">
+      <ion-icon class="bars" name="menu-outline"></ion-icon>
+    </button>
+
+    <ul class="navigation" id="nav-menu">
+      <li><a href="#about" class="nav-link">About Me</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#certificates" class="nav-link">Certifications</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
     <section id="about">
       <h2>About Me</h2>
       <p>
@@ -194,7 +218,7 @@
       </ul>
     </section>
 
-    <section id="certifications">
+    <section id="certificates">
       <h2>Certifications</h2>
       <ul class="simple-list">
         <li>Certified JavaScript Developer — W3Schools</li>
@@ -216,17 +240,38 @@
     <section id="projects">
       <h2>Projects</h2>
       <ul class="simple-list">
-        <li><a href="https://github.com/your-username/project-one" target="_blank">Project One</a>: Responsive task manager web app.</li>
-        <li><a href="https://github.com/your-username/project-two" target="_blank">Project Two</a>: Open source React component library.</li>
-        <li><a href="https://yourwebsite.com" target="_blank">Personal Blog</a>: Built with Gatsby and GraphQL.</li>
+        <li><a href="https://github.com/your-username/project-one" target="_blank" rel="noopener noreferrer">Project One</a>: Responsive task manager web app.</li>
+        <li><a href="https://github.com/your-username/project-two" target="_blank" rel="noopener noreferrer">Project Two</a>: Open source React component library.</li>
+        <li><a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">Personal Blog</a>: Built with Gatsby and GraphQL.</li>
       </ul>
     </section>
   </div>
 
   <script>
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
+    const burger = document.getElementById('burger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Optional: Close menu on nav link click (mobile)
+    document.querySelectorAll('.navigation a.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Optional: Smooth scroll behavior
+    document.querySelectorAll('a.nav-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
   </script>
 
 </body>
