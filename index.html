@@ -13,238 +13,227 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background-color: #e6f0ff; /* Light blue background */
       color: #333;
-      min-height: 100vh;
     }
 
-    /* 🔹 HEADER */
-    header {
-      width: 100%;
-      background-color: #ffffff;
-      padding: 1.2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #764ba2;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li a {
-      color: #333;
-      font-weight: 600;
-      text-decoration: none;
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      background-color: #eee;
-    }
-
-    /* 🔹 SLOGAN Section */
-    .slogan {
-      height: 100vh;
-      background: linear-gradient(90deg, #667eea, #764ba2);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
       padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .slogan .blockquote {
-      max-width: 800px;
-      border-left: 6px solid #ffd700;
-      padding-left: 1.2rem;
-      font-style: italic;
+    .center {
+      text-align: center;
     }
 
-    .slogan h1 {
-      font-weight: 700;
-      font-size: 2.5rem;
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #667eea;
       margin-bottom: 1rem;
     }
 
-    .slogan h4 {
-      font-weight: 900;
-      letter-spacing: 3px;
-      margin-top: 0;
-    }
-
-    /* 🔹 MAIN CONTAINER */
-    .container {
-      max-width: 900px;
-      margin: 3rem auto;
-      background-color: #ffffff;
-      padding: 2.5rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    section h2 {
+    .name {
       font-size: 2rem;
-      margin-bottom: 1.2rem;
-      border-bottom: 3px solid #ffd700;
-      padding-bottom: 0.3rem;
+      font-weight: bold;
       color: #333;
     }
 
-    /* 🔹 CARDS */
-    .cards {
-      display: flex;
-      flex-direction: column;
+    .tech-stack {
+      margin-top: 0.8rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    section {
+      margin-top: 2.5rem;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #667eea;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
     }
 
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
     .card {
-      background: #f9f9f9;
-      padding: 1.2rem 1.5rem;
-      border-left: 6px solid #ffd700;
+      background: #f7f9fc;
+      padding: 1rem 1.5rem;
+      border-left: 5px solid #667eea;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
     .card h3 {
-      margin-bottom: 0.3rem;
-      font-weight: 700;
-      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .skills-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .skill-group {
+      flex: 1 1 250px;
+      background: #f0f4ff;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .skill-group h4 {
+      margin-bottom: 0.5rem;
       color: #444;
+      border-bottom: 2px solid #667eea;
+      display: inline-block;
+      padding-bottom: 0.2rem;
     }
 
-    .card span {
-      font-style: italic;
-      color: #777;
-      display: block;
-      margin-bottom: 0.7rem;
+    .skill-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
     }
 
-    .card p {
+    .skill-icons img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .programming-languages {
+      margin-top: 0.8rem;
       font-size: 1rem;
-      line-height: 1.5;
       color: #555;
     }
 
-    /* 🔹 Responsive */
     @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+      .info-grid {
+        grid-template-columns: 1fr;
       }
 
-      nav ul {
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .slogan h1 {
-        font-size: 1.8rem;
-      }
-
-      .container {
-        padding: 2rem;
+      .skill-group {
+        flex: 1 1 100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- 🔹 HEADER (white background) -->
-  <header>
-    <h1>Amol Edewar</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container center">
+    <img src="your-photo.jpg" alt="Amol Edewar" class="profile-photo">
+    <div class="name">Amol Edewar</div>
+    <div class="tech-stack">| React | Node.js | HTML | CSS | JavaScript |</div>
+  </div>
 
-  <!-- 🔹 SLOGAN SECTION -->
-  <section class="slogan" id="slogan">
-    <div class="blockquote">
-      <h1>"Code is like humor. When you have to explain it, it’s bad."</h1>
-      <h4><b>— Amol</b></h4>
-    </div>
-  </section>
-
-  <!-- 🔹 MAIN CONTENT CONTAINER -->
   <div class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Creative web developer passionate about building elegant, performant websites and apps. Skilled in front-end development with a focus on UX and clean design.</p>
-    </section>
+    <div class="info-grid">
+      <section>
+        <h2>Education</h2>
+        <p>BSc Computer Science - XYZ University</p>
+      </section>
+      <section>
+        <h2>About</h2>
+        <p>Passionate frontend developer with strong focus on clean code and responsive design.</p>
+      </section>
+      <section>
+        <h2>Languages</h2>
+        <p>English, Hindi, Marathi</p>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>Email: amol@example.com<br>Phone: +91-99999-99999</p>
+      </section>
+    </div>
+  </div>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Frontend Developer</h3>
-          <span>ABC Company — Jan 2023 to Present</span>
-          <p>Lead frontend development on company’s main product. Built reusable React components and optimized app performance, improving user retention by 20%.</p>
-        </article>
-
-        <article class="card">
-          <h3>Web Designer</h3>
-          <span>XYZ Studio — Jun 2021 to Dec 2022</span>
-          <p>Designed modern and intuitive websites for small businesses, collaborating closely with clients and developers for smooth project delivery.</p>
-        </article>
-
-        <article class="card">
-          <h3>Intern - Web Development</h3>
-          <span>Startup Inc. — Jan 2020 to May 2021</span>
-          <p>Assisted in website maintenance, SEO improvements, and front-end bug fixes. Learned the importance of clean, accessible code.</p>
-        </article>
+  <div class="container">
+    <section>
+      <h2>Work Experience</h2>
+      <div class="card-container">
+        <div class="card">
+          <h3>Frontend Developer – Company 1</h3>
+          <p>Worked on React applications and improved performance by 25%.</p>
+        </div>
+        <div class="card">
+          <h3>UI/UX Designer – Company 2</h3>
+          <p>Designed and implemented web UI for e-commerce platform.</p>
+        </div>
+        <div class="card">
+          <h3>Web Intern – Company 3</h3>
+          <p>Supported frontend dev team and assisted in code refactoring.</p>
+        </div>
       </div>
     </section>
+  </div>
 
-    <section id="education">
-      <h2>Education</h2>
-      <p>B.Sc. in Computer Science — University of Example (2016 - 2020)</p>
-    </section>
-
-    <section id="certifications">
+  <div class="container">
+    <section>
       <h2>Certifications</h2>
-      <p>✅ Certified JavaScript Developer — W3Schools</p>
-      <p>✅ Responsive Web Design — freeCodeCamp</p>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <p>HTML, CSS, JavaScript, React, UI/UX Design, Git, SEO</p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <p><a href="https://github.com/your-username/project-one" target="_blank" style="color:#764ba2; font-weight:bold;">Project One</a> - Responsive task manager app</p>
-      <p><a href="https://github.com/your-username/project-two" target="_blank" style="color:#764ba2; font-weight:bold;">Project Two</a> - React component library</p>
+      <div class="card-container">
+        <div class="card">
+          <h3>Java Certification</h3>
+          <p>Issued by Oracle in 2023</p>
+        </div>
+        <div class="card">
+          <h3>LinkedIn Skill Assessment</h3>
+          <p>JavaScript: Passed with top 15% badge</p>
+        </div>
+      </div>
     </section>
   </div>
+
+  <div class="container">
+    <section>
+      <h2>Tools, Technical & Programming</h2>
+      <div class="skills-section">
+        <div class="skill-group">
+          <h4>🛠 Tools</h4>
+          <div class="skill-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>⚙️ Technical</h4>
+          <div class="skill-icons">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>💻 Programming</h4>
+          <div class="programming-languages">
+            Java, C, C++, Python, JavaScript
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
 </body>
 </html>
