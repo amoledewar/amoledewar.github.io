@@ -3,237 +3,313 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amol Edewar - Resume</title>
+  <title>Your Name | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* === RESET & BASE === */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+text-align: center;
     }
-
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #e6f0ff; /* Light blue background */
-      color: #333;
+      font-family: 'Inter', sans-serif;
+      background: #f0f8ff;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: #fff;
+    /* === HEADER === */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2563eb;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to right, #e0f2fe, #f0faff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding-top: 6rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
     }
 
-    .center {
+    /* === CONTAINERS === */
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .container-alt {
+      max-width: 1050px;
+      margin: 2rem auto;
+    
+      padding: 3rem 2rem;
+      border-radius: 10px;
+    }
+
+    /* === PROFILE PHOTO + TECH STACK === */
+    .profile {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .profile img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .profile h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .tech-stack {
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* === SECTION HEADINGS === */
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: Black;
       text-align: center;
     }
 
-    .profile-photo {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #667eea;
-      margin-bottom: 1rem;
-    }
-
-    .name {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .tech-stack {
-      margin-top: 0.8rem;
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: #666;
-    }
-
-    section {
-      margin-top: 2.5rem;
-    }
-
-    section h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      border-bottom: 3px solid #667eea;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .card-container {
+    /* === CARDS === */
+    .card-row {
       display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      margin-top: 1rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
     }
-
     .card {
-      background: #f7f9fc;
-      padding: 1rem 1.5rem;
-      border-left: 5px solid #667eea;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      background: white;
+      padding: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      width: 300px;
     }
-
-    .card h3 {
+    .card strong {
+      display: block;
       margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-      color: #333;
+      color: #2563eb;
+      font-size: 1.1rem;
     }
 
-    .skills-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .skill-group {
-      flex: 1 1 250px;
-      background: #f0f4ff;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-
-    .skill-group h4 {
-      margin-bottom: 0.5rem;
-      color: #444;
-      border-bottom: 2px solid #667eea;
-      display: inline-block;
-      padding-bottom: 0.2rem;
-    }
-
-    .skill-icons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .skill-icons img {
-      width: 40px;
-      height: 40px;
-    }
-
-    .programming-languages {
-      margin-top: 0.8rem;
-      font-size: 1rem;
-      color: #555;
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #6b7280;
     }
 
     @media (max-width: 600px) {
-      .info-grid {
-        grid-template-columns: 1fr;
+      nav a {
+        margin-left: 1rem;
+        font-size: 0.95rem;
       }
-
-      .skill-group {
-        flex: 1 1 100%;
+      .hero h1 {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container center">
-    <img src="your-photo.jpg" alt="Amol Edewar" class="profile-photo">
-    <div class="name">Amol Edewar</div>
-    <div class="tech-stack">| React | Node.js | HTML | CSS | JavaScript |</div>
+<!-- HEADER -->
+<header>
+  <div class="logo">Your Name</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+  </nav>
+</header>
+
+<!-- HERO / SLOGAN -->
+<section class="hero">
+  <h1>Building Robust, Scalable Software Solutions</h1>
+</section>
+
+<!-- MAIN CONTAINER -->
+<div class="container">
+
+  <!-- PROFILE -->
+  <div class="profile">
+<img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" alt="Your Photo" style="width:150px; height:150px; border-radius:50%; object-fit:cover;">
+
+    <h2>Your Name</h2>
+    <div class="tech-stack">Java | Spring Boot | JavaScript | Angular</div>
   </div>
 
-  <div class="container">
-    <div class="info-grid">
-      <section>
-        <h2>Education</h2>
-        <p>BSc Computer Science - XYZ University</p>
-      </section>
-      <section>
-        <h2>About</h2>
-        <p>Passionate frontend developer with strong focus on clean code and responsive design.</p>
-      </section>
-      <section>
-        <h2>Languages</h2>
-        <p>English, Hindi, Marathi</p>
-      </section>
-      <section>
-        <h2>Contact</h2>
-        <p>Email: amol@example.com<br>Phone: +91-99999-99999</p>
-      </section>
+  <!-- ABOUT -->
+  <section id="about">
+    <h3>About Me</h3>
+    <p>
+      I am a passionate software developer with experience in backend and frontend technologies. I love building clean and scalable applications using Java, Spring Boot, Angular, and modern development tools.
+    </p>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" style="margin-top: 2rem;">
+    <h3>Education</h3>
+    <p>Bachelor of Engineering in Computer Science - XYZ University, 2019</p>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="languages" style="margin-top: 2rem;">
+    <h3>Languages</h3>
+    <p>English, Hindi, Marathi</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="margin-top: 2rem;">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>Phone: +91-9876543210</p>
+  </section>
+</div>
+
+<!-- ALTERNATE CONTAINER AFTER CONTACT -->
+<div class="container-alt">
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h3>Work Experience</h3>
+    <div class="card-row">
+      <div class="card">
+        <strong>Company A</strong>
+        <p>Software Engineer (2020 - Present)</p>
+        <p>Developed REST APIs, integrated microservices using Spring Boot.</p>
+      </div>
+      <div class="card">
+        <strong>Company B</strong>
+        <p>Frontend Developer (2019 - 2020)</p>
+        <p>Built responsive UI with Angular and JavaScript.</p>
+      </div>
+      <div class="card">
+        <strong>Internship</strong>
+        <p>Company C (2018)</p>
+        <p>Worked on automation testing tools and backend scripts.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="container">
-    <section>
-      <h2>Work Experience</h2>
-      <div class="card-container">
-        <div class="card">
-          <h3>Frontend Developer – Company 1</h3>
-          <p>Worked on React applications and improved performance by 25%.</p>
-        </div>
-        <div class="card">
-          <h3>UI/UX Designer – Company 2</h3>
-          <p>Designed and implemented web UI for e-commerce platform.</p>
-        </div>
-        <div class="card">
-          <h3>Web Intern – Company 3</h3>
-          <p>Supported frontend dev team and assisted in code refactoring.</p>
-        </div>
-      </div>
-    </section>
-  </div>
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" style="margin-top: 2rem;">
+    <h3>Certifications</h3>
+    <div class="card-row">
+      <div class="card"><strong>Java Certification</strong><p>Oracle Certified</p></div>
+      <div class="card"><strong>Spring Boot</strong><p>LinkedIn Learning</p></div>
+      <div class="card"><strong>REST APIs</strong><p>Udemy</p></div>
+    </div>
+    <div class="card-row" style="margin-top: 1.5rem;">
+      <div class="card"><strong>Git & GitHub</strong><p>Coursera</p></div>
+      <div class="card"><strong>Docker Basics</strong><p>Pluralsight</p></div>
+      <div class="card"><strong>Clean Code</strong><p>LinkedIn</p></div>
+    </div>
+  </section>
 
-  <div class="container">
-    <section>
-      <h2>Certifications</h2>
-      <div class="card-container">
-        <div class="card">
-          <h3>Java Certification</h3>
-          <p>Issued by Oracle in 2023</p>
-        </div>
-        <div class="card">
-          <h3>LinkedIn Skill Assessment</h3>
-          <p>JavaScript: Passed with top 15% badge</p>
-        </div>
-      </div>
-    </section>
-  </div>
+  <!-- TOOLS -->
+  <section id="tools" style="margin-top: 2rem;">
+    <h3>Tools</h3>
+    <div class="card-row">
+      <div class="card"><strong>JMeter</strong></div>
+      <div class="card"><strong>Figma</strong></div>
+    </div>
+  </section>
 
-  <div class="container">
-    <section>
-      <h2>Tools, Technical & Programming</h2>
-      <div class="skills-section">
-        <div class="skill-group">
-          <h4>🛠 Tools</h4>
-          <div class="skill-icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>⚙️ Technical</h4>
-          <div class="skill-icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-          </div>
-        </div>
-        <div class="skill-group">
-          <h4>💻 Programming</h4>
-          <div class="programming-languages">
-            Java, C, C++, Python, JavaScript
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+  <!-- TECHNICAL -->
+  <section id="skills" style="margin-top: 2rem;">
+    <h3>Technical Skills</h3>
+    <div class="card-row">
+      <div class="card"><strong>XML</strong></div>
+      <div class="card"><strong>REST API</strong></div>
+      <div class="card"><strong>GitHub</strong></div>
+    </div>
+  </section>
+
+  <!-- PROGRAMMING -->
+  <section id="programming" style="margin-top: 2rem;">
+    <h3>Programming Languages</h3>
+    <div class="card-row">
+      <div class="card"><strong>Java</strong></div>
+      <div class="card"><strong>C</strong></div>
+      <div class="card"><strong>Angular</strong></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" style="margin-top: 2rem;">
+    <h3>Projects</h3>
+    <div class="card-row">
+      <div class="card"><strong>Portfolio Website</strong><p>Built with HTML, CSS, JS, hosted on GitHub Pages</p></div>
+      <div class="card"><strong>Task Manager</strong><p>Java + Spring Boot + MySQL backend</p></div>
+      <div class="card"><strong>Weather App</strong><p>JavaScript + OpenWeatherMap API</p></div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2025 Your Name. All rights reserved.
+</footer>
 
 </body>
 </html>
