@@ -1,176 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Amol Edewar - Resume</title>
-<style>
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amol Edewar - Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: #f1f1f1;
-    min-height: 100vh;
-    padding: 0;
-  }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #333;
+      min-height: 100vh;
+    }
 
-  /* Full-width header */
-  header {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 1.2rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #a77ff2;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
+    /* 🔹 SLOGAN: Full-screen, comes first */
+    .slogan {
+      height: 100vh;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
 
-  header h1 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #ffd700;
-  }
+    .slogan .blockquote {
+      max-width: 800px;
+      border-left: 6px solid #ffd700;
+      padding-left: 1.2rem;
+      font-style: italic;
+    }
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.8rem;
-  }
+    .slogan h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-  nav ul li a {
-    color: #f1f1f1;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-  }
+    .slogan h4 {
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-top: 0;
+    }
 
-  nav ul li a:hover {
-    background-color: #a77ff2;
-    color: #fff;
-  }
-
-  /* Container for main content only */
-  .container {
-    max-width: 800px;
-    margin: 3rem auto 4rem auto;
-    background-color: rgba(0,0,0,0.6);
-    padding: 2rem 3rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  }
-
-  /* Slogan Section */
-  .slogan {
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    padding: 3rem 1rem;
-    color: white;
-    text-align: center;
-    font-style: italic;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  }
-
-  .slogan .blockquote {
-    max-width: 700px;
-    margin: 0 auto;
-    border-left: 6px solid #ffd700;
-    padding-left: 1.2rem;
-  }
-
-  .slogan h1 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .slogan h4 {
-    font-weight: 900;
-    letter-spacing: 3px;
-    margin-top: 0;
-  }
-
-  section {
-    margin-bottom: 2.5rem;
-  }
-
-  section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-    border-bottom: 3px solid #ffd700;
-    padding-bottom: 0.3rem;
-  }
-
-  /* Experience Cards */
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.2rem 1.5rem;
-    border-left: 6px solid #ffd700;
-    border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-  }
-  .card:hover {
-    transform: translateX(10px);
-  }
-
-  .card h3 {
-    color: #ffd700;
-    margin-bottom: 0.3rem;
-    font-weight: 700;
-    font-size: 1.4rem;
-  }
-
-  .card span {
-    font-style: italic;
-    color: #ccc;
-    display: block;
-    margin-bottom: 0.7rem;
-  }
-
-  .card p {
-    color: #ddd;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
+    /* 🔹 HEADER: Full width */
     header {
-      flex-direction: column;
-      gap: 1rem;
-      align-items: flex-start;
-      padding: 1rem 2rem;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #a77ff2;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #ffd700;
+    }
+
     nav ul {
-      flex-wrap: wrap;
-      gap: 1rem;
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
     }
+
+    nav ul li a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #a77ff2;
+    }
+
+    /* 🔹 MAIN CONTAINER: white background */
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      background-color: #ffffff;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 3px solid #ffd700;
+      padding-bottom: 0.3rem;
+      color: #333;
+    }
+
+    /* 🔹 Cards */
     .cards {
-      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
-  }
-</style>
+
+    .card {
+      background: #f9f9f9;
+      padding: 1.2rem 1.5rem;
+      border-left: 6px solid #ffd700;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #444;
+    }
+
+    .card span {
+      font-style: italic;
+      color: #777;
+      display: block;
+      margin-bottom: 0.7rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    /* 🔹 Responsive */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .slogan h1 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
+  <!-- 🔹 Slogan Section First -->
+  <section class="slogan" id="slogan">
+    <div class="blockquote">
+      <h1>"Code is like humor. When you have to explain it, it’s bad."</h1>
+      <h4><b>— Amol</b></h4>
+    </div>
+  </section>
+
+  <!-- 🔹 Header -->
   <header>
     <h1>Amol Edewar</h1>
     <nav>
@@ -185,14 +194,8 @@
     </nav>
   </header>
 
+  <!-- 🔹 Main Content -->
   <div class="container">
-    <!-- Slogan Section -->
-    <section class="slogan" id="slogan">
-      <div class="blockquote">
-        <h1>"Code is like humor. When you have to explain it, it’s bad."</h1>
-        <h4><b>— Amol</b></h4>
-      </div>
-    </section>
 
     <section id="about">
       <h2>About Me</h2>
@@ -224,13 +227,13 @@
 
     <section id="education">
       <h2>Education</h2>
-      <p>Bachelor of Science in Computer Science — University of Example (2016 - 2020)</p>
+      <p>B.Sc. in Computer Science — University of Example (2016 - 2020)</p>
     </section>
 
     <section id="certifications">
       <h2>Certifications</h2>
-      <p>Certified JavaScript Developer — W3Schools</p>
-      <p>Responsive Web Design — freeCodeCamp</p>
+      <p>✅ Certified JavaScript Developer — W3Schools</p>
+      <p>✅ Responsive Web Design — freeCodeCamp</p>
     </section>
 
     <section id="skills">
@@ -240,9 +243,10 @@
 
     <section id="projects">
       <h2>Projects</h2>
-      <p><a href="https://github.com/your-username/project-one" target="_blank" style="color:#ffd700;">Project One</a> - Responsive task manager app</p>
-      <p><a href="https://github.com/your-username/project-two" target="_blank" style="color:#ffd700;">Project Two</a> - React component library</p>
+      <p><a href="https://github.com/your-username/project-one" target="_blank" style="color:#764ba2; font-weight:bold;">Project One</a> - Responsive task manager app</p>
+      <p><a href="https://github.com/your-username/project-two" target="_blank" style="color:#764ba2; font-weight:bold;">Project Two</a> - React component library</p>
     </section>
+
   </div>
 </body>
 </html>
