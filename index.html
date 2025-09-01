@@ -3,95 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name - Portfolio</title>
+  <title>Your Name - Colorful Portfolio</title>
   <style>
     /* Reset and base */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f83600, #f9d423);
+      color: #222;
       line-height: 1.6;
       padding: 2rem;
+      min-height: 100vh;
     }
     .container {
       max-width: 900px;
       background: #fff;
       margin: auto;
-      padding: 2rem 3rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2.5rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      border: 5px solid #ff6f61;
     }
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
+      color: #ff6f61;
+      letter-spacing: 2px;
       margin-bottom: 0.3rem;
-      color: #2c3e50;
+      text-transform: uppercase;
     }
     header p {
-      font-size: 1.2rem;
-      color: #666;
+      font-size: 1.3rem;
+      color: #555;
+      font-weight: 600;
       font-style: italic;
     }
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     h2 {
-      border-bottom: 3px solid #3498db;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-      color: #3498db;
+      font-size: 2rem;
+      color: #ff6f61;
+      border-bottom: 4px solid #f9a825;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
     }
     ul {
       list-style: none;
     }
     ul li {
-      padding: 0.5rem 0;
+      padding: 0.8rem 0;
       border-bottom: 1px solid #eee;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #444;
     }
     a {
-      color: #3498db;
+      color: #f9a825;
+      font-weight: 700;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     a:hover {
-      color: #1d6fa5;
+      color: #ff6f61;
       text-decoration: underline;
     }
     footer {
       text-align: center;
       color: #999;
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-top: 3rem;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem 2rem;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Your Name</h1>
-      <p>Web Developer & Designer | Open Source Enthusiast</p>
+      <p>Creative Developer & Designer</p>
     </header>
 
     <section id="about">
       <h2>About Me</h2>
       <p>
-        Passionate developer focused on building clean and accessible web applications.
-        Skilled in HTML, CSS, JavaScript, and modern frameworks.
+        I love creating colorful, engaging web experiences that stand out. Skilled in HTML, CSS, JavaScript, and UI/UX design.
       </p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Project One:</strong> <a href="https://github.com/your-username/project-one" target="_blank">GitHub Link</a> — A responsive web app for managing tasks.</li>
-        <li><strong>Project Two:</strong> <a href="https://github.com/your-username/project-two" target="_blank">GitHub Link</a> — An open-source library for data visualization.</li>
-        <li><strong>Project Three:</strong> <a href="https://yourwebsite.com" target="_blank">Live Demo</a> — Personal blog built with static site generators.</li>
+        <li><strong>Vibrant Portfolio:</strong> <a href="https://github.com/your-username/portfolio" target="_blank">GitHub Link</a> — A colorful portfolio website.</li>
+        <li><strong>Creative Blog:</strong> <a href="https://github.com/your-username/blog" target="_blank">GitHub Link</a> — Blogging platform with bright UI.</li>
+        <li><strong>Design System:</strong> <a href="https://yourwebsite.com" target="_blank">Live Demo</a> — A UI design system for modern apps.</li>
       </ul>
     </section>
 
@@ -102,7 +125,7 @@
     </section>
 
     <footer>
-      &copy; 2025 Your Name. All rights reserved.
+      &copy; 2025 Your Name. Designed with passion.
     </footer>
   </div>
 </body>
