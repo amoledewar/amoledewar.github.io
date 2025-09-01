@@ -2,54 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your Name | Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background-color: #fafafa;
       color: #333;
+      line-height: 1.5;
     }
     header, section {
-      padding: 20px;
-      max-width: 900px;
+      max-width: 800px;
       margin: auto;
+      padding: 20px;
     }
     header {
-      background: #333;
-      color: #fff;
       text-align: center;
-      padding: 40px 20px;
+      padding-top: 60px;
+      padding-bottom: 40px;
     }
     nav {
       text-align: center;
-      background: #444;
+      background-color: #444;
       padding: 10px 0;
     }
     nav a {
-      color: white;
-      text-decoration: none;
+      color: #fff;
       margin: 0 15px;
+      text-decoration: none;
       font-weight: bold;
     }
     nav a:hover {
       text-decoration: underline;
     }
-    section {
-      background: white;
-      margin-top: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
     h2 {
       border-bottom: 2px solid #ddd;
       padding-bottom: 5px;
     }
+    .headline {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #666;
+    }
     ul {
       padding-left: 20px;
+    }
+    .contact-info p {
+      margin: 5px 0;
     }
   </style>
 </head>
@@ -57,7 +62,7 @@
 
   <header>
     <h1>Your Name</h1>
-    <p>Web Developer | Software Engineer | Tech Enthusiast</p>
+    <p class="headline">STAY CURIOUS AND ALWAYS EXPLORING</p>
   </header>
 
   <nav>
@@ -67,57 +72,69 @@
     <a href="#certifications">Certifications</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Write a short bio about yourself here. Include your background, passions, or current role and goals.</p>
+    <p>I am a [Your Role] with experience in [Key Domains/Skills]. I specialize in [Your Expertise]. I enjoy [Your Passions], and I’m always excited to [What You Love Doing].</p>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
     <ul>
-      <li><strong>Job Title</strong> – Company Name (Dates)
-        <br>Description of your role and achievements.
-      </li>
-      <li><strong>Job Title</strong> – Company Name (Dates)
-        <br>Description of your role and achievements.
-      </li>
+      <li><strong>Job Title – Company Name</strong> (Dates)
+        <br>Brief description/highlight of your role and impact.</li>
+      <li><strong>Job Title – Company Name</strong> (Dates)
+        <br>Another description of role and achievements.</li>
     </ul>
   </section>
 
   <section id="education">
     <h2>Education</h2>
     <ul>
-      <li><strong>Degree</strong> – University Name (Year)
-        <br>Relevant coursework or honors.
-      </li>
+      <li><strong>Degree — Institution</strong> (Year)
+        <br>Optional: include relevant honors or coursework.</li>
+      <li><strong>Degree — Institution</strong> (Year)
+        <br>Optional: additional details.</li>
     </ul>
   </section>
 
   <section id="certifications">
     <h2>Certifications</h2>
     <ul>
-      <li>Certification Name – Issuing Organization (Year)</li>
-      <li>Certification Name – Issuing Organization (Year)</li>
+      <li>Certification Name — Issuer (Year)</li>
+      <li>Certification Name — Issuer (Year)</li>
     </ul>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>Skills & Expertise</h2>
     <ul>
-      <li>Programming: HTML, CSS, JavaScript, Python</li>
-      <li>Tools: Git, VS Code, Linux</li>
-      <li>Frameworks: React, Node.js</li>
+      <li>Skill / Domain 1</li>
+      <li>Skill / Domain 2</li>
+      <li>Skill / Domain 3</li>
+      <li>Etc.</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Project Title</strong> – Short description of the project, technologies used, and a <a href="#">link</a> if available.</li>
-      <li><strong>Project Title</strong> – Short description of the project, technologies used, and a <a href="#">link</a> if available.</li>
+      <li><strong>Project Title</strong>
+        <br>Description of your project, tools used, link (if applicable).</li>
+      <li><strong>Project Title</strong>
+        <br>Description, technologies, and link.</li>
     </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p><strong>Location:</strong> [Your Location]</p>
+      <p><strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <p><strong>LinkedIn/GitHub:</strong> <a href="#">Your Profile</a></p>
+    </div>
   </section>
 
 </body>
