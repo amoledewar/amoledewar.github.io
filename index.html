@@ -5,104 +5,158 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Amol Edewar - Resume</title>
 <style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
   body {
-    margin: 0; padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #1e1e2f;
-    color: #e0e0e0;
-    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #f1f1f1;
+    min-height: 100vh;
+    padding: 3rem 1rem;
   }
+
   .container {
-    max-width: 850px;
-    margin: 2rem auto;
-    background: #292b3e;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.6);
+    padding: 2rem 3rem;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-    padding: 2.5rem 3rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   }
+
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #a77ff2;
+    padding-bottom: 1rem;
   }
+
   header h1 {
-    color: #ff6f61;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    font-weight: 900;
     letter-spacing: 2px;
+    color: #ffd700;
   }
+
   nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1.8rem;
   }
+
   nav ul li a {
-    color: #a0a0a0;
-    text-decoration: none;
+    color: #f1f1f1;
     font-weight: 600;
-    padding: 0.3rem 0.7rem;
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
     border-radius: 6px;
     transition: background-color 0.3s ease;
   }
+
   nav ul li a:hover {
-    background: #ff6f61;
+    background-color: #a77ff2;
     color: #fff;
   }
-  section {
-    margin-bottom: 3rem;
-  }
-  section h2 {
-    border-bottom: 3px solid #ff6f61;
-    padding-bottom: 0.4rem;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: #ff6f61;
-  }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 1.8rem;
-  }
-  .card {
-    background: #393c5a;
+
+  /* Slogan Section */
+  .slogan {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    padding: 3rem 1rem;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 10px;
-    padding: 1.4rem 1.6rem;
-    box-shadow: 0 8px 20px rgba(255,111,97,0.3);
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  .slogan .blockquote {
+    max-width: 700px;
+    margin: 0 auto;
+    border-left: 6px solid #ffd700;
+    padding-left: 1.2rem;
+  }
+
+  .slogan h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .slogan h4 {
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-top: 0;
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 3px solid #ffd700;
+    padding-bottom: 0.3rem;
+  }
+
+  /* Experience Cards */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.2rem 1.5rem;
+    border-left: 6px solid #ffd700;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
   }
   .card:hover {
-    transform: translateY(-5px);
+    transform: translateX(10px);
   }
+
   .card h3 {
+    color: #ffd700;
     margin-bottom: 0.3rem;
-    color: #ff6f61;
+    font-weight: 700;
+    font-size: 1.4rem;
   }
+
   .card span {
-    display: block;
     font-style: italic;
-    color: #c0c0c0;
-    margin-bottom: 0.6rem;
-    font-size: 0.9rem;
+    color: #ccc;
+    display: block;
+    margin-bottom: 0.7rem;
   }
+
   .card p {
+    color: #ddd;
     font-size: 1rem;
-    color: #d6d6d6;
+    line-height: 1.5;
   }
-  a.project-link {
-    color: #ff6f61;
-    text-decoration: none;
-  }
-  a.project-link:hover {
-    text-decoration: underline;
-  }
+
+  /* Responsive */
   @media (max-width: 600px) {
     header {
       flex-direction: column;
-      align-items: flex-start;
       gap: 1rem;
+      align-items: flex-start;
     }
     nav ul {
       flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .cards {
       gap: 1rem;
     }
   }
@@ -124,9 +178,17 @@
       </nav>
     </header>
 
+    <!-- Slogan Section Inserted -->
+    <section class="slogan" id="slogan">
+      <div class="blockquote">
+        <h1>"Code is like humor. When you have to explain it, it’s bad."</h1>
+        <h4><b>— Amol</b></h4>
+      </div>
+    </section>
+
     <section id="about">
       <h2>About Me</h2>
-      <p>Web developer passionate about creating modern, responsive web applications with great UX and clean code.</p>
+      <p>Creative web developer passionate about building elegant, performant websites and apps. Skilled in front-end development with a focus on UX and clean design.</p>
     </section>
 
     <section id="experience">
@@ -135,41 +197,43 @@
         <article class="card">
           <h3>Frontend Developer</h3>
           <span>ABC Company — Jan 2023 to Present</span>
-          <p>Created scalable React applications, improved performance and accessibility, leading to higher engagement.</p>
+          <p>Lead frontend development on company’s main product. Built reusable React components and optimized app performance, improving user retention by 20%.</p>
         </article>
+
         <article class="card">
           <h3>Web Designer</h3>
           <span>XYZ Studio — Jun 2021 to Dec 2022</span>
-          <p>Designed sleek websites and UI components tailored to client needs, focusing on responsiveness and brand identity.</p>
+          <p>Designed modern and intuitive websites for small businesses, collaborating closely with clients and developers for smooth project delivery.</p>
         </article>
+
         <article class="card">
           <h3>Intern - Web Development</h3>
           <span>Startup Inc. — Jan 2020 to May 2021</span>
-          <p>Contributed to front-end bug fixes and SEO improvements, learned team collaboration and best coding practices.</p>
+          <p>Assisted in website maintenance, SEO improvements, and front-end bug fixes. Learned the importance of clean, accessible code.</p>
         </article>
       </div>
     </section>
 
     <section id="education">
       <h2>Education</h2>
-      <p>B.Sc. Computer Science — University of Example (2016-2020)</p>
+      <p>Bachelor of Science in Computer Science — University of Example (2016 - 2020)</p>
     </section>
 
     <section id="certifications">
       <h2>Certifications</h2>
-      <p>Certified JavaScript Developer - W3Schools</p>
-      <p>Responsive Web Design - freeCodeCamp</p>
+      <p>Certified JavaScript Developer — W3Schools</p>
+      <p>Responsive Web Design — freeCodeCamp</p>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
-      <p>HTML, CSS, JavaScript, React, Git, UI/UX, SEO</p>
+      <p>HTML, CSS, JavaScript, React, UI/UX Design, Git, SEO</p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <p><a href="https://github.com/your-username/project1" class="project-link" target="_blank" rel="noopener noreferrer">Project One</a> - React ToDo app</p>
-      <p><a href="https://github.com/your-username/project2" class="project-link" target="_blank" rel="noopener noreferrer">Project Two</a> - Portfolio Website</p>
+      <p><a href="https://github.com/your-username/project-one" target="_blank" style="color:#ffd700;">Project One</a> - Responsive task manager app</p>
+      <p><a href="https://github.com/your-username/project-two" target="_blank" style="color:#ffd700;">Project Two</a> - React component library</p>
     </section>
   </div>
 </body>
